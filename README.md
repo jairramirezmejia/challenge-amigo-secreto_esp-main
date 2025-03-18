@@ -2,6 +2,9 @@
 
 Una aplicación web simple para realizar sorteos de "Amigo Secreto" entre amigos. Permite agregar nombres a una lista y seleccionar uno aleatoriamente.
 
+![Captura de pantalla](assets/image.png)
+
+
 ## Características
 
 - **Agregar nombres:** Los usuarios pueden escribir el nombre de un amigo en un campo de texto y agregarlo a una lista visible.
@@ -9,8 +12,6 @@ Una aplicación web simple para realizar sorteos de "Amigo Secreto" entre amigos
 - **Visualización de la lista:** Los nombres ingresados aparecen en una lista debajo del campo de entrada.
 - **Sorteo aleatorio:** Al hacer clic en "Sortear Amigo", se selecciona aleatoriamente un nombre de la lista y se muestra como resultado.
 - **Interacción amigable:** Soporte para agregar nombres presionando Enter, enfoque automático para entradas rápidas y retroalimentación visual inmediata.
-
-![Captura de pantalla](assets/image.png)
 
 ## Tecnologías utilizadas
 
