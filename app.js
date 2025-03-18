@@ -8,7 +8,6 @@ let amigos = [];
  * @param {string} texto - Texto a validar
  * @returns {boolean} - Verdadero si el texto contiene solo caracteres válidos
  */
-
 function esNombreValido(texto) {
     // Expresión regular que acepta letras (mayúsculas y minúsculas), incluyendo caracteres
     // especiales del español latino como ñ, á, é, í, ó, ú, ü, espacios, guiones y apóstrofes
@@ -47,6 +46,7 @@ function agregarAmigo() {
     inputAmigo.focus();
 }
 
+
 function actualizarListaAmigos() {
     const listaAmigos = document.getElementById('listaAmigos');
     
@@ -79,9 +79,16 @@ function sortearAmigo() {
 }
 
 /**
+ * Muestra el resultado del sorteo en la interfaz
+ * Esta función:
+ * 1. Obtiene el elemento HTML donde se mostrará el resultado
+ * 2. Limpia cualquier resultado anterior
+ * 3. Crea un nuevo elemento con el mensaje del resultado
+ * 4. Agrega el elemento al DOM
  * 
  * @param {string} amigo - Nombre del amigo seleccionado
  */
+
 function mostrarResultado(amigo) {
     const resultado = document.getElementById('resultado');
     
@@ -92,6 +99,24 @@ function mostrarResultado(amigo) {
     const elementoResultado = document.createElement('li');
     elementoResultado.textContent = `¡${amigo} es el amigo secreto!`;
     resultado.appendChild(elementoResultado);
+}
+
+function reiniciarAplicacion() {
+    // Vaciar el array de amigos
+    amigos = [];
+    
+    // Limpiar la lista de amigos en la interfaz
+    const listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = '';
+    
+    // Limpiar el resultado del sorteo
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+    
+    // Enfocar el campo de entrada
+    const inputAmigo = document.getElementById('amigo');
+    inputAmigo.value = '';
+    inputAmigo.focus();
 }
 
 function inicializarEventos() {
@@ -115,6 +140,12 @@ function inicializarEventos() {
             this.value = valorLimpio;
         }
     });
+    
+    // Asociar la función de reinicio al botón correspondiente
+    const botonReiniciar = document.getElementById('botonReiniciar');
+    if (botonReiniciar) {
+        botonReiniciar.addEventListener('click', reiniciarAplicacion);
+    }
 }
 
 // Inicializar la aplicación cuando se carga la página
